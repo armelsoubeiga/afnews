@@ -1,0 +1,10 @@
+pandoc: 2.7.2
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  package_intro: package_intro.html
+last_built: 2020-09-27T21:13Z
+urls:
+  reference: https://armelsoubeiga.github.io/afnews/reference
+  article: https://armelsoubeiga.github.io/afnews/articles
+

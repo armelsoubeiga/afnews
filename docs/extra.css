@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Fira+Code:wght@300&display=swap');
+body{
+	font-family:'Dosis', sans-serif;
+}
+code,pre,.r{
+	font-family:'Fira Code', monospace;
+}
+[data-toggle='toc'] a{
+	color:#313f47 !important;
+}
+h1,h2,h3,h4{
+	color:#313f47 !important;
+}
+#pkgdown-sidebar h2{
+	color:#f06b0c !important;
+}
+.navbar-default{
+	background-color:#f06b0c !important;
+	color:white;
+}
+.navbar-nav li a{
+	color:white !important;
+}
+a{
+	color:#313f47 !important;
+}
+.btn-copy-ex{
+	background-color:#f06b0c !important;
+	color:#313f47 !important;
+	border-color:#f06b0c !important;
+}
+.dropdown-menu li a{
+	color:white;
+	background-color:#f06b0c !important;
+}
+blockquote{
+	border-color:#f06b0c !important;
+}
+.btn-primary{
+	border:#f06b0c !important;
+	background-color:#f4a717 !important;
+}

@@ -11,6 +11,16 @@
 [![R build status](https://github.com/armelsoubeiga/afnews/workflows/R-CMD-check/badge.svg)](https://github.com/armelsoubeiga/afnews/actions)
 <!-- badges: end -->
 
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/armelsoubeiga/afnews/master/logo.png" height="250px" />
+
+Africa news data collection. A package to scraping all news of all countries of Africa. The news is by country and by date range. The data returned are: title, contents, comments, journal name and category. 
+
+[Website](https://armelsoubeiga.github.io/afnews) | [Get Started](https://armelsoubeiga.github.io/afnews/get-started.html)
+
+</div>
+
 The goal of afnews is to ...
 
 ## Installation
