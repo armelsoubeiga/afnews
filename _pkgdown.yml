@@ -1,0 +1,57 @@
+url: https://armelsoubeiga.github.io/afnews
+home:
+  title: afnews
+  description: Africa news data collection. A package to scraping all news of all countries of Africa.
+
+template:
+  path: pkgdown/templates
+  params:
+    bootswatch: readable
+    ganalytics: UA-128994988-1
+
+navbar:
+  title: afnews
+  left:
+    - text: Home
+      href: index.html
+    - text: Licence
+      href: LICENSE.html
+    - text: Get Started
+      href: get-started.html
+    - text: Guides
+      menu:
+        - text: Reference
+          href: reference/index.html
+        - text: Advanced
+          href: advanced.html
+        - text: Tags
+          href: news/index.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/armelsoubeiga/afnews
+
+reference:
+- title: Generals utils
+  contents:
+  - url_exists
+  - cbind_na
+
+- title: Burkina faso news collect
+  contents:
+    - bf_news_collect
+    - bf_news_contents
+
+- title: Côte d’Ivoire news collect
+  contents:
+    - ci_news_collect
+    - ci_news_contents
+
+- title: Mali news collect
+  contents:
+    - ml_news_collect
+    - ml_news_contents
+
+
+authors:
+  Armel Soubeiga:
+    href: https://armelsoubeiga.github.io/

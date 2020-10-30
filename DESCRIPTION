@@ -1,0 +1,28 @@
+Package: afnews
+Title: Africa news data collection.
+Version: 0.1.0
+Authors@R: 
+    person(given = "Armel",
+           family = "SOUBEIGA",
+           role = c("aut", "cre"),
+           email = "armel.soubeiga@yahoo.fr",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: A package to scraping all news of all countries of Africa. The news is by country and by date range. The data returned are: title, contents, comments, journal name and category.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    httr,
+    xml2,
+    rvest,
+    lubridate,
+    rapportools,
+    stringi
+Depends: 
+    tidyverse
