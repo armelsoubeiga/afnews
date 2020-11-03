@@ -51,6 +51,11 @@ reference:
     - ml_news_collect
     - ml_news_contents
 
+- title: Senegal news collect
+  contents:
+    - sn_news_collect
+    - sn_news_contents
+
 
 authors:
   Armel Soubeiga:

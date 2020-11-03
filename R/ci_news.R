@@ -37,13 +37,18 @@ ci_news_collect <- function(start_d, end_d, press="all"){
                                          html_node(".k2Pagination > ul li:last-child a") %>%
                                          html_attr("href")  %>% str_split("=") %>% .[[1]] %>% .[3] %>% as.integer(),
                                          error = function(e){NA},
-                                         warning=  function(e){NA}))
-                          })
-
+                                         warning=  function(e){NA}))})
+  
   # Build all url
   number_pag <- na.omit(number_pag)
-  int <- map_dfr(.x=number_pag$nbr_pg, .f=function(x){tibble(int=seq(0,x,10))})
-  url_pag_linfodrome <- paste0(number_pag$url,'?limit=10&start=', sort(int$int))
+  number_pag_order <- number_pag %>%
+                      split(1:nrow(.)) %>%
+                      map_dfr(.f = function(x){
+                        tibble(url = x$url,
+                               nbr_pg=seq(0,x$nbr_pg,10))})
+  number_pag_order <- number_pag_order[order(number_pag_order$nbr_pg),]
+  url_pag_linfodrome <- paste0(number_pag_order$url,'?limit=10&start=', number_pag_order$nbr_pg)
+  
 
   # Collect article url by pagination
   art_linfodrome <- data.frame()
@@ -173,8 +178,13 @@ ci_news_collect <- function(start_d, end_d, press="all"){
                                              )})
       # Build all url
       number_pag <- na.omit(number_pag)
-      int <- map_dfr(.x=number_pag$nbr_pg, .f=function(x){tibble(int=1:x)})
-      url_pag_api <- paste0(number_pag$url,'page/', sort(int$int))
+      number_pag_order <- number_pag %>%
+                          split(1:nrow(.)) %>%
+                          map_dfr(.f = function(x){
+                            tibble(url = x$url,
+                                   nbr_pg=1:x$nbr_pg)})
+      number_pag_order <- number_pag_order[order(number_pag_order$nbr_pg),]
+      url_pag_api <- paste0(number_pag_order$url,'page/', number_pag_order$nbr_pg)
 
 
       # Collect article url by pagination

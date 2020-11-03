@@ -116,9 +116,14 @@ bf_news_collect <- function(start_d, end_d, press="all"){
 
     # Build all url
     number_pag <- na.omit(number_pag)
-    int <- map_dfr(.x=number_pag$nbr_pg, .f=function(x){tibble(int=1:x)})
-    url_pag_b24 <- paste0(number_pag$url,'page/', sort(int$int))
-
+    number_pag_order <- number_pag %>%
+                        split(1:nrow(.)) %>%
+                        map_dfr(.f = function(x){
+                          tibble(url = x$url,
+                                 nbr_pg=1:x$nbr_pg)})
+    number_pag_order <- number_pag_order[order(number_pag_order$nbr_pg),]
+    url_pag_b24 <- paste0(number_pag_order$url,'page/', number_pag_order$nbr_pg)
+    
 
     # Collect article url by pagination url_category[-c(1,3)]
     art_b24 <- data.frame()
