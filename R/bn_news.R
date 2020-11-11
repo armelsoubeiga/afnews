@@ -27,7 +27,7 @@ bn_news_collect <- function(start_d, end_d, press="all"){
     url_rubrique <- read_html("https://leprogresinfo.net/") %>%
                     html_nodes("#td-outer-wrap #td-header-menu ul li a") %>%
                     html_attr("href") %>% str_trim() %>% .[-c(1,8)]
-    
+
     #Pagination collect
     number_pag <- map_dfr(.x = url_rubrique,
                           .f = function(x){
@@ -45,8 +45,8 @@ bn_news_collect <- function(start_d, end_d, press="all"){
                                  nbr_pg=1:x$nbr_pg)})
     number_pag_order <- number_pag_order[order(number_pag_order$nbr_pg),]
     url_pag_leprogres<- paste0(number_pag_order$url,'page/', number_pag_order$nbr_pg, "/")
-    
-    
+
+
     # Collect article url by pagination
     art_leprogres <- data.frame()
     for(i in 1:length(url_pag_leprogres)){
@@ -73,7 +73,7 @@ bn_news_collect <- function(start_d, end_d, press="all"){
                               error = function(e){NA},
                               warning=  function(e){NA}))
         art_leprogres <- rbind.data.frame(art_leprogres, d_i)
-        
+
         if(tail(date_article, n=1L) > as.Date.character(start_d)-1){
           width <- options()$width
           cat(paste0(rep('>', width), collapse = ''), "\n")
@@ -90,10 +90,10 @@ bn_news_collect <- function(start_d, end_d, press="all"){
 
 
   ########
-  ########  https://lanationbenin.info/ ############ 
+  ########  https://lanationbenin.info/ ############
   lanationbenin <- function(start_d, end_d){
 
-    # category url collecte  
+    # category url collecte
     url_category <- read_html("https://lanationbenin.info/")%>%
                     html_nodes(".tz-header .tz-header-menu nav .menu-menu-principal-container ul li a") %>%
                     html_attr("href") %>% str_trim()  %>% .[c(2:6,8:13)]
@@ -118,15 +118,18 @@ bn_news_collect <- function(start_d, end_d, press="all"){
     number_pag_order <- number_pag_order[order(number_pag_order$nbr_pg),]
     url_pag_lanationbenin <- paste0(number_pag_order$url,'page/', number_pag_order$nbr_pg, "/")
 
-    # Collect article url by pagination 
+    # Collect article url by pagination
     art_lanationbenin <- data.frame()
     for(i in 1:length(url_pag_lanationbenin)){
           x <- url_pag_lanationbenin[i]
-          
+
           date_article = try(
                         read_html(x) %>%
                         html_nodes(".container #content article header time") %>%
-                        html_text() %>% dmy() %>% date())
+                        html_text() %>% str_trim())
+          french.months <- c("janvier", "f\\u00e9vrier", "mars", "avril", "mai", "juin",
+                             "juillet", "ao\\u00fbt", "septembre", "octobre", "novembre", "d\\u00e9cembre")
+          date_article <- stringi::stri_replace_all_fixed(date_article, french.months, month.abb, vectorize_all=FALSE) %>% dmy() %>% date()
 
           if(is.na(tail(date_article, n=1L))){
             next()
@@ -142,7 +145,7 @@ bn_news_collect <- function(start_d, end_d, press="all"){
             title_article = tryCatch(
                             read_html(x) %>%
                             html_nodes(".container #content article header h2 a") %>%
-                            html_text() %>% str_trim(), 
+                            html_text() %>% str_trim(),
                             error = function(e){NA},
                             warning=  function(e){NA}))
 
@@ -162,7 +165,7 @@ bn_news_collect <- function(start_d, end_d, press="all"){
     return(art_lanationbenin)
 }
 
-  
+
   # Select article for time entries
   duration <- interval(as.Date.character(start_d), as.Date.character(end_d)) %>% as.numeric('days')
 
@@ -242,7 +245,7 @@ bn_news_contents <- function(start_d, end_d, press='all') {
     return(article_leprogres)
   }
 
-  
+
   ######
   ###### lanationbenin ###
   lanationbenin_news_contents <- function(start_d, end_d){

@@ -182,26 +182,23 @@
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>afnews</span><span class='op'>)</span>
 <span class='va'>dt_</span> <span class='op'>&lt;-</span> <span class='fu'>bf_news_collect</span><span class='op'>(</span>start_d<span class='op'>=</span><span class='st'>"2020-10-20"</span>, end_d<span class='op'>=</span><span class='st'>"2020-10-28"</span>, press<span class='op'>=</span><span class='st'>"all"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 
-#&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 
-#&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 
-#&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 
 #&gt; Done!
 #&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 
 #&gt; Done!</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>dt_</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   date_article                              url_article
-#&gt; 1   2020-10-27 http://lefaso.net/spip.php?article100246
-#&gt; 2   2020-10-26 http://lefaso.net/spip.php?article100234
-#&gt; 3   2020-10-26 http://lefaso.net/spip.php?article100208
-#&gt; 4   2020-10-26 http://lefaso.net/spip.php?article100214
-#&gt; 5   2020-10-26 http://lefaso.net/spip.php?article100236
-#&gt; 6   2020-10-25 http://lefaso.net/spip.php?article100209
-#&gt;                                                                                                                            title_article
-#&gt; 1 Présidentielle 2020 au Burkina : Les candidats invités à dévoiler leur projet en matière de bonne gouvernance économique et financière
-#&gt; 2                                   Élections du 22 novembre 2020 au Burkina : Les parties prenantes s’engagent pour un processus apaisé
-#&gt; 3                                          Présidentielle du 22 novembre 2020 : Treize candidats, trois tendances, un fauteuil à occuper
-#&gt; 4                                 Législatives 2020 et quota-genre : Les espoirs d’une représentativité des femmes n’ont pas été comblés
-#&gt; 5                       Elections au Burkina : Les humoristes militent pour des élections apaisées, avec le spectacle « Votez pour moi »
-#&gt; 6                                     L’Allemagne et le PNUD signent un accord de coopération pour appuyer les élections au Burkina Faso</div></pre>
+#&gt; 1   2020-10-25 http://lefaso.net/spip.php?article100202
+#&gt; 2   2020-10-23 http://lefaso.net/spip.php?article100172
+#&gt; 3   2020-10-22 http://lefaso.net/spip.php?article100132
+#&gt; 4   2020-10-22 http://lefaso.net/spip.php?article100145
+#&gt; 5   2020-10-21 http://lefaso.net/spip.php?article100123
+#&gt; 6   2020-10-21 http://lefaso.net/spip.php?article100114
+#&gt;                                                                                                               title_article
+#&gt; 1                                            Dori : Le Premier ministre échange avec les forces vives de la région du Sahel
+#&gt; 2        Liberté provisoire de Jean Claude Bouda : "Cela nous intrigue...", Sagado Nacanabo, Secrétaire exécutif du REN-LAC
+#&gt; 3                            Burkina : Pascal Zaida et Marcel Tankoano alertent sur les risques d’une crise post-électorale
+#&gt; 4                               Justice : Jean Claude Bouda en liberté provisoire, 5 mois après son incarcération à la MACO
+#&gt; 5       Réconciliation nationale : « Pourquoi avoir une haine au point de ne pas pardonner ? », Dr Justine Couldiati/Kielem
+#&gt; 6 Roch Kaboré et la Réconciliation nationale : Le Mouvement pour le retour de Blaise Compaoré y voit un affront, un mépris…</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
