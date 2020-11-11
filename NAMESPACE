@@ -2,6 +2,8 @@
 
 export(bf_news_collect)
 export(bf_news_contents)
+export(bn_news_collect)
+export(bn_news_contents)
 export(cbind_na)
 export(ci_news_collect)
 export(ci_news_contents)

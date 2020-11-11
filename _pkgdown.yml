@@ -56,6 +56,10 @@ reference:
     - sn_news_collect
     - sn_news_contents
 
+- title: Benin news collect
+  contents:
+    - bn_news_collect
+    - bn_news_contents
 
 authors:
   Armel Soubeiga:

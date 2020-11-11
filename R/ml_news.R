@@ -31,15 +31,16 @@ ml_news_collect <- function(start_d, end_d, press="all"){
     url_pag <- map_dfr(.x = url_rubrique,
                        .f = function(x){
                          tibble(
-                           url_pag=try(read_html(x) %>%
-                                         html_nodes(".pagination li a") %>%
-                                         html_attr("href") %>% str_trim()))})
-    url_pag <- unique(url_pag$url_pag)
+                           url_pag = try(
+                                       read_html(x) %>%
+                                       html_nodes("#wrapper .pagination li a") %>%
+                                       html_attr("href") %>% str_trim()))})
+    url_pag_echo <- unique(url_pag$url_pag)
 
     # Collect article url by pagination
     art_echos <- data.frame()
-    for(i in 1:length(url_pag)){
-      x <- url_pag[i]
+    for(i in 1:length(url_pag_echo)){
+      x <- url_pag_echo[i]
       date_article = try(read_html(x) %>%
                            html_nodes(".bg-body .row .row .post-date-dark ul li:last-child") %>%
                            html_text()%>% str_trim())
@@ -111,7 +112,7 @@ ml_news_collect <- function(start_d, end_d, press="all"){
                                  nbr_pg=1:x$nbr_pg)})
     number_pag_order <- number_pag_order[order(number_pag_order$nbr_pg),]
     url_pag_maliweb <- paste0(number_pag_order$url,'/page/', number_pag_order$nbr_pg)
-    
+
 
     # Collect article url by pagination
     art_maliweb <- data.frame()
