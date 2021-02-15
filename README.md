@@ -1,11 +1,10 @@
 # afnews
 
 <!-- badges: start -->
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/armelsoubeiga/afnews?branch=master&svg=true)](https://ci.appveyor.com/project/armelsoubeiga/afnews)
+[![R build status](https://github.com/armelsoubeiga/afnews/workflows/R-CMD-check/badge.svg)](https://github.com/armelsoubeiga/afnews/actions)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![version](https://img.shields.io/github/tag/armelsoubeiga/afnews.svg)](https://github.com/armelsoubeiga/afnews/releases)
 [![code-size](https://img.shields.io/github/languages/code-size/armelsoubeiga/afnews.svg)](https://github.com/armelsoubeiga/afnews)
-[![R build status](https://github.com/armelsoubeiga/afnews/workflows/R-CMD-check/badge.svg)](https://github.com/armelsoubeiga/afnews/actions)
 <!-- badges: end -->
 
 <div align="center">

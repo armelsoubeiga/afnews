@@ -1,3 +1,44 @@
-# # AFNEWS get started
+---
+title: "Introduction to afnews"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to afnews}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+library(afnews)
+knitr::opts_chunk$set(
+  comment = "#>", 
+  collapse = TRUE
+)
+```
+
+There are three main families of functions in afnews:
+
+1. General tools: these functions allow you to check the existence of a web url in https, htpp or not. They also allow to set tables, vector, matrices of different sizes (columns).
+
+2. Function of collecting articles on many press.
+
+3. Main functions of collecting news from articles collected or urls provided.
+
+
+
+## General tools
+
+
+* You can verify the existence of a URL with  `url_exists()`:
+
+```{r}
+url_exists("https://armelsoubeiga.github.io/afnews/index.html",non_2xx_return_value = FALSE, quiet = FALSE)
+```
+
+This returns TRUE if the url in parameter exists. The function also checked the HTTP code is not in the range `2xx`, the default is to return <<FALSE>>.
+
+* You can also merge r objects (chars, int, data.frame, ...) of different sizes through the `cbind_na ()` function:
+
+Note that the plus or minus lines are replaced by NA.
+
 
 
